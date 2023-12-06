@@ -29,6 +29,18 @@ public class ColourTable {
         }
     }
 
+    // Method to add a 24-bit RGB color to the table
+    public void add(int rgbValue) {
+        boolean added = false;
+        for (int i = 0; i < colorLookupTable.length; i++) {
+            if (colorLookupTable[i] == 0xFF000000) { // If the slot is empty (black), add the color
+                colorLookupTable[i] = rgbValue;
+                added = true;
+                break;
+            }
+        }
+    }
+
     // Method to get color at a specific index in the table
     public int getColorAtIndex(int index) {
         if (index >= 0 && index < colorLookupTable.length) {
@@ -55,6 +67,8 @@ public class ColourTable {
         colorTable.setColorAtIndex(1, 0x00FF00);
         // Blue at index 2
         colorTable.setColorAtIndex(2, 0x0000FF);
+
+        // For use of developer to see their added color
 
         // Get color at index 0
         int colorAtIndex0 = colorTable.getColorAtIndex(0);
