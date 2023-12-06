@@ -38,4 +38,19 @@ public class ColorTableTest {
         assertEquals(0x00FF00, colourTable.getColorAtIndex(1));
         assertEquals(0x0000FF, colourTable.getColorAtIndex(2));
     }
+
+    @Test
+    public void testAddColorTableFull() {
+        // Test adding colors when the table is already full
+        int numColors = 3;
+        ColourTable colourTable = new ColourTable(numColors);
+
+        colourTable.add(0xFF0000); // Red
+        colourTable.add(0x00FF00); // Green
+        colourTable.add(0x0000FF); // Blue
+
+        int colorToOverflow = 0xFFFF00; // Yellow
+
+        assertThrows(IllegalStateException.class, () -> colourTable.add(colorToOverflow));
+    }
 }
