@@ -23,4 +23,19 @@ public class ColorTableTest {
         int smallNumColors = 1;
         assertThrows(IllegalArgumentException.class, () -> new ColourTable(smallNumColors));
     }
+
+    @Test
+    public void testAddColor() {
+        // Test adding colors to the table
+        int numColors = 4;
+        ColourTable colourTable = new ColourTable(numColors);
+
+        colourTable.add(0xFF0000); // Red
+        colourTable.add(0x00FF00); // Green
+        colourTable.add(0x0000FF); // Blue
+
+        assertEquals(0xFF0000, colourTable.getColorAtIndex(0));
+        assertEquals(0x00FF00, colourTable.getColorAtIndex(1));
+        assertEquals(0x0000FF, colourTable.getColorAtIndex(2));
+    }
 }
