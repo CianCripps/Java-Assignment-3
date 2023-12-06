@@ -63,8 +63,8 @@ public class ColourTable {
         // Get color at index 2
         int colorAtIndex2 = colorTable.getColorAtIndex(2);
 
-        System.out.println("Color at index 1: #" + Integer.toHexString(colorAtIndex0));
+        System.out.println("Color at index 0: #" + Integer.toHexString(colorAtIndex0));
         System.out.println("Color at index 1: #" + Integer.toHexString(colorAtIndex1));
-        System.out.println("Color at index 1: #" + Integer.toHexString(colorAtIndex2));
+        System.out.println("Color at index 2: #" + Integer.toHexString(colorAtIndex2));
     }
 }
